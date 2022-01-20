@@ -1,4 +1,5 @@
 const express = require('express');
+const db = require('../db/connect.js');
 
 const app = express();
 
