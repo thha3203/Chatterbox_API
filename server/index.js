@@ -22,6 +22,16 @@ app.get('/messages', (req, res) => {
     });
 });
 
+app.get('/rooms', (req, res) => {
+  Messages.distinct('roomname')
+    .then(result => {
+      res.json(result);
+    })
+    .catch(err => {
+      res.send('GET ROOMS ERROR');
+    });
+});
+
 const port = 3000;
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
